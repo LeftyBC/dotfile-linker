@@ -35,7 +35,11 @@ def invadeHomedir(backupdir, home, dotfile_prefix):
                 print "+ Moving %s to backup directory %s" % (realname, backuppath)
                 os.rename(targetpath, os.path.join(backuppath, realname))
 
-            print '* linking file %s to %s' % (fullpath, targetpath)
+            if os.path.isdir(fullpath):
+                print '* linking directory %s to %s' % (fullpath, targetpath)
+            else:
+                print '* linking file %s to %s' % (fullpath, targetpath)
+
             os.symlink(fullpath, targetpath)
 
 if __name__ == "__main__":
