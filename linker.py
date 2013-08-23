@@ -22,7 +22,7 @@ def invadeHomedir(backupdir, home, dotfileprefix):
         os.mkdir(os.path.join(home, backupdir))
 
     for filename in os.listdir(os.getcwd()):
-        if filename[:1] == dotfile_prefix:
+        if filename[:1] == dotfileprefix:
             realname = ".%s" % filename[1:]
             fullpath = os.path.join(os.getcwd(), filename)
             targetpath = os.path.join(home, realname)
