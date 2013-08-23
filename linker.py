@@ -15,14 +15,14 @@ invadeHomedir()
 """
 
 
-def invadeHomedir(backupdir, home):
+def invadeHomedir(backupdir, home, dotfile_prefix):
     backuppath = os.path.join(home, backupdir)
 
     if not os.path.exists(backuppath):
         os.mkdir(os.path.join(home, backupdir))
 
     for filename in os.listdir(os.getcwd()):
-        if filename[:1] == "_":
+        if filename[:1] == dotfile_prefix:
             realname = ".%s" % filename[1:]
             fullpath = os.path.join(os.getcwd(), filename)
             targetpath = os.path.join(home, realname)
@@ -41,4 +41,5 @@ def invadeHomedir(backupdir, home):
 if __name__ == "__main__":
     home = expanduser("~")
     backupdir = '.dotfiles-backup'
-    invadeHomedir(backupdir, home)
+    dotfile_prefix = "_"
+    invadeHomedir(backupdir, home, dotfile_prefix)
