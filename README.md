@@ -9,16 +9,15 @@ Colin and Phil work on a lot of servers via the shell, and they enjoy tweaking a
 If you let git (or the dvcs your of preference) handle your dotfiles' commits and you push them to your central repository, having synced dotfiles is much easier.
 
 ## Installation
-1. git clone git@github.com:pdufault/dotfile-linker.git
-2. cd dotfiles-linker
-3. mkdir .dotfiles
-4. cd .dotfiles
-5. touch _vim
-6. Final step:
-  ```
-  $ ../linker.py
-  linking file /home/user/src/dotfile-linker/.dotfiles/_vim to /home/user/.vim 
-  ``` 
+```
+$ git clone git@github.com:pdufault/dotfile-linker.git
+$ cd dotfiles-linker
+$ mkdir .dotfiles
+$ cd .dotfiles
+$ touch _vim
+$ ../linker.py
+linking file /home/user/dotfile-linker/.dotfiles/_vim to /home/user/.vim 
+``` 
 
 ## License
 
