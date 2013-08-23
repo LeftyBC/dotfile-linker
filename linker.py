@@ -9,7 +9,7 @@ from os.path import expanduser
 """
 invadeHomedir()
   ensures a dotfiles backup dir exists
-  looks at all files in the cwd prefixed with a _ character
+  looks at all files in the cwd prefixed with the character in dotfileprefix
     if there's a collusion, move the old file into the backup directory
     symlink the file into your home directory
 """
