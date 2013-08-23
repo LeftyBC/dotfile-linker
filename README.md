@@ -14,9 +14,11 @@ If you let git (or the dvcs your of preference) handle your dotfiles' commits an
 3. mkdir .dotfiles
 4. cd .dotfiles
 5. touch _vim
-6. ../linker.py
-
-``` linking file /home/user/src/dotfile-linker/.dotfiles/_vim to /home/user/.vim ```
+6. Final step:
+  ```
+  $ ../linker.py
+  linking file /home/user/src/dotfile-linker/.dotfiles/_vim to /home/user/.vim 
+  ``` 
 
 ## License
 
