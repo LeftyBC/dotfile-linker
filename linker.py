@@ -15,7 +15,7 @@ invadeHomedir()
 """
 
 
-def invadeHomedir(backupdir, home, dotfile_prefix):
+def invadeHomedir(backupdir, home, dotfileprefix):
     backuppath = os.path.join(home, backupdir)
 
     if not os.path.exists(backuppath):
@@ -45,5 +45,5 @@ def invadeHomedir(backupdir, home, dotfile_prefix):
 if __name__ == "__main__":
     home = expanduser("~")
     backupdir = '.dotfiles-backup'
-    dotfile_prefix = "_"
-    invadeHomedir(backupdir, home, dotfile_prefix)
+    dotfileprefix = "_"
+    invadeHomedir(backupdir, home, dotfileprefix)
