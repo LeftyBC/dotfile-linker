@@ -9,7 +9,7 @@ Colin and Phil work on a lot of servers via the shell, and they enjoy tweaking a
 If you let git (or the dvcs your of preference) handle your dotfiles' commits and you push them to your central repository, having synced dotfiles is much easier.
 
 ## Installation
-1. Clone from this github repository
+1. git clone git@github.com:pdufault/dotfile-linker.git
 2. cd dotfiles-linker
 3. mkdir .dotfiles
 4. cd .dotfiles
