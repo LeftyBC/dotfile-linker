@@ -22,9 +22,8 @@ for filename in os.listdir(os.getcwd()):
             continue
 
         if os.path.exists(targetpath):
-            print "+++ Moving %s to backup directory %s" % (realname, backuppath)
-            os.rename(targetpath,os.path.join(backuppath, realname))
+            print "+ Moving %s to backup directory %s" % (realname, backuppath)
+            os.rename(targetpath, os.path.join(backuppath, realname))
 
-        print '*** linking file %s to %s' % (fullpath, targetpath)
+        print '* linking file %s to %s' % (fullpath, targetpath)
         os.symlink(fullpath, targetpath)
-
