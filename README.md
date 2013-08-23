@@ -4,12 +4,11 @@ dotfile-linker is a utility to symlink dotfiles stored in a directory into your 
 
 ## Motivation
 
-We work on a lot of servers via the shell, and we like tweaking and improving our .bashrc, .vimrc, etc.  Keeping things in sync with scp is a lot of work, especially with a few hundred hosts.
+Colin and Phil work on a lot of servers via the shell, and they enjoy tweaking and improving our dotfiles regularly.  Keeping things in sync with scp is a lot of work, especially with a few hundred hosts.
 
-If you let git (or the dvcs your of preference) handle your dotfiles' commits and you push them to your central repository, getting the hosts to sync up is much easier.
+If you let git (or the dvcs your of preference) handle your dotfiles' commits and you push them to your central repository, having synced dotfiles is much easier.
 
 ## Installation
-_Get started_
 1. Clone from this github repository
 2. cd dotfiles-linker
 3. mkdir .dotfiles
