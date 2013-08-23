@@ -6,10 +6,11 @@ import os
 from os.path import expanduser
 home = expanduser("~")
 
-backuppath = os.path.join(home, ".dotfiles-backup")
+backupdir = '.dotfiles-backup'
+backuppath = os.path.join(home, backupdir)
 
 if not os.path.exists(backuppath):
-    os.mkdir(os.path.join(home, ".dotfiles-backup"))
+    os.mkdir(os.path.join(home, backupdir))
 
 for filename in os.listdir(os.getcwd()):
     if filename[:1] == "_":
