@@ -16,7 +16,7 @@ $ mkdir .dotfiles
 $ cd .dotfiles
 $ touch _vim
 $ ../linker.py
-linking file /home/user/dotfile-linker/.dotfiles/_vim to /home/user/.vim 
+* linking file /home/user/dotfile-linker/.dotfiles/_vim to /home/user/.vim 
 ``` 
 
 ## License
