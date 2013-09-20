@@ -8,16 +8,23 @@ Colin and Phil work on a lot of servers via the shell, and they enjoy tweaking a
 
 If you let git (or the dvcs your of preference) handle your dotfiles' commits and you push them to your central repository, having synced dotfiles is much easier.
 
+## Requirements
+A basic Python install is all you should really need.  Tested mainly with Python 2.7.
+
 ## Installation
 ```
-$ git clone git@github.com:LeftyBC/dotfile-linker.git
-$ cd dotfiles-linker
-$ mkdir .dotfiles
-$ cd .dotfiles
-$ touch _vim
-$ ../linker.py
-* linking file /home/user/dotfile-linker/.dotfiles/_vim to /home/user/.vim 
+$ git clone git@github.com:LeftyBC/dotfile-linker.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ mkdir contrib/sources
+$ touch contrib/sources/_testfile
+$ touch contrib/sources/.testfile2
+$ python linker.py
+* linking file /home/user/dotfile-linker/.dotfiles/_testfile to /home/user/.testfile 
+* linking file /home/user/dotfile-linker/.dotfiles/.testfile2 to /home/user/.testfile2
 ``` 
+ 
+## Notes
+You should create a subdirectory "contrib/sources".  We purposefully omit this directory in the repo to give you the opportunity to use ```git submodule``` or a project like [Giternal](https://github.com/patmaddox/giternal) to track them separately from the main linker repo.
 
 ## License
 

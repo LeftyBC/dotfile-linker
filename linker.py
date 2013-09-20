@@ -18,13 +18,18 @@ invadeHomedir()
 def invadeHomedir(backupdir, home, dotfileprefix):
     backuppath = os.path.join(home, backupdir)
 
+    # my dotfiles live in a submodule that lives in contrib/sources
+    sourcespath = os.path.join(os.getcwd(),'contrib','sources')
+
     if not os.path.exists(backuppath):
         os.mkdir(os.path.join(home, backupdir))
 
-    for filename in os.listdir(os.getcwd()):
-        if filename[:1] == dotfileprefix:
+    for filename in os.listdir(sourcespath):
+        if filename[:1] == dotfileprefix or filename[:1] == ".":
+	    # if it's already a dotfile, don't mangle the name
+	    # otherwise, sub "." for the dotfileprefix
             realname = ".%s" % filename[1:]
-            fullpath = os.path.join(os.getcwd(), filename)
+            fullpath = os.path.join(sourcespath, filename)
             targetpath = os.path.join(home, realname)
 
             if os.path.islink(targetpath):
