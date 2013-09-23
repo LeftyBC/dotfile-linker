@@ -32,6 +32,10 @@ def invadeHomedir(backupdir, home, dotfileprefix):
             fullpath = os.path.join(sourcespath, filename)
             targetpath = os.path.join(home, realname)
 
+	    if filename == ".git":
+		# ignore the .git directory so we don't make a repo out of the homedir
+		continue
+
             if os.path.islink(targetpath):
                 # target path is a symlink, leave it alone
                 continue
