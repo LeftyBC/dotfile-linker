@@ -15,7 +15,7 @@ A basic Python install is all you should really need.  Tested mainly with Python
 ```
 $ git clone git@github.com:LeftyBC/dotfile-linker.git ~/.dotfiles
 $ cd ~/.dotfiles
-$ mkdir contrib/sources
+$ mkdir -p contrib/sources
 $ touch contrib/sources/_testfile
 $ touch contrib/sources/.testfile2
 $ python linker.py
@@ -25,6 +25,8 @@ $ python linker.py
  
 ## Notes
 You should create a subdirectory "contrib/sources".  We purposefully omit this directory in the repo to give you the opportunity to use ```git submodule``` or a project like [Giternal](https://github.com/patmaddox/giternal) to track them separately from the main linker repo.
+
+If any files already exist in your home directory, they will be backed up before being replaced by symlinks.
 
 ## License
 
