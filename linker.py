@@ -13,7 +13,7 @@ invadeHomedir()
 """
 
 
-def invadeHomedir(backupdir, home, dotfileprefix):
+def invadeHomedir(backupdir, home, dotfileprefix, ignorefiles):
     backuppath = os.path.join(home, backupdir)
 
     # my dotfiles live in a submodule that lives in contrib/sources
@@ -30,7 +30,7 @@ def invadeHomedir(backupdir, home, dotfileprefix):
             fullpath = os.path.join(sourcespath, filename)
             targetpath = os.path.join(home, realname)
 
-        if filename == ".git" or filename == ".gitignore":
+        if filename in ignorefiles:
         # ignore git metadata so we don't make a repo out of the homedir
             continue
 
@@ -58,4 +58,5 @@ if __name__ == "__main__":
     home = expanduser("~")
     backupdir = '.dotfiles-backup'
     dotfileprefix = "_"
-    invadeHomedir(backupdir, home, dotfileprefix)
+    ignored_files = [ ".git", ".gitignore", ".DS_Store" ]
+    invadeHomedir(backupdir, home, dotfileprefix, ignored_files)
