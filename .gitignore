@@ -2,3 +2,4 @@ contrib/sources
 .giternal.yml
 
 contrib/vimfiles
+.DS_Store
